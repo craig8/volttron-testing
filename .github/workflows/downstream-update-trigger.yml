@@ -1,6 +1,7 @@
 name: Update to latest pyproject dependencies.
 
 on:
+  workflow_dispatch:
   repository_dispatch:
     types: [update-dependencies]
 
