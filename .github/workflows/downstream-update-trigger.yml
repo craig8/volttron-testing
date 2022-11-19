@@ -43,12 +43,7 @@ jobs:
 
       - name: Update poetry to the latest dependencies
         run: |
-          poetry install
-          poetry update
           poetry add volttron@latest
-      #version=poetry show | grep 'volttron\s' | awk '{print $(2)}'
-      #sed -i "s/volttron\s.*$/volttron = \"^${version}\"/" pyproject.toml
-      #echo "Modified volttron to be version ${version}"
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.1
