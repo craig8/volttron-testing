@@ -42,7 +42,11 @@ jobs:
           installer-parallel: true
 
       - name: Update poetry to the latest dependencies
-        run: poetry update
+        run: |
+          poetry install
+          poetry update
+          version=poetry show | grep 'volttron\s' | awk '{print $(2)}'
+          sed -i "s/volttron\s.*$/volttron = \"^${version}\"/" pyproject.toml
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.1
