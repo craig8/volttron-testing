@@ -40,9 +40,9 @@ jobs:
           virtualenvs-in-project: true
           installer-parallel: true
 
-      - name: Update poetry to the latest dependencies
-        run: |
-          poetry -vvvv add "volttron@latest"
+#      - name: Update poetry to the latest dependencies
+#        run: |
+#          poetry -vvvv add "volttron@latest"
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.1
